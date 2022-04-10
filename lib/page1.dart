@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'dart:typed_data';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -82,59 +81,126 @@ class _page1State extends State<page1> {
           children: <Widget>[
             Container(
               height: tinggi * 0.015,
-              width: lebar * 10,
+              width: lebar,
               color: Color(0xffe1e1e1),
             ),
             Container(
               child: const Image(
                   fit: BoxFit.cover, image: AssetImage("image/jongrang.jpg")),
               height: tinggi * 0.35,
-              width: lebar * 10,
+              width: lebar,
             ),
             Container(
               height: tinggi * 0.015,
-              width: lebar * 10,
+              width: lebar,
               color: Color(0xffe1e1e1),
             ),
             Container(
-              height: lebar * 0.6,
-              child: ElevatedButton(
-                onPressed: () async {
-                  if (!isplaying && !audioplayed) {
-                    int result = await player.playBytes(audiobytes);
-                    if (result == 1) {
-                      //play success
-                      setState(() {
-                        isplaying = true;
-                        audioplayed = true;
-                      });
-                    } else {
-                      print("Error while playing audio.");
-                    }
-                  } else if (audioplayed && !isplaying) {
-                    int result = await player.resume();
-                    if (result == 1) {
-                      //resume success
-                      setState(() {
-                        isplaying = true;
-                        audioplayed = true;
-                      });
-                    } else {
-                      print("Error on resume audio.");
-                    }
-                  } else {
-                    int result = await player.pause();
-                    if (result == 1) {
-                      //pause success
-                      setState(() {
-                        isplaying = false;
-                      });
-                    } else {
-                      print("Error on pause audio.");
-                    }
-                  }
-                },
-                child: null,
+              height: tinggi * 0.05,
+              width: lebar,
+              child: Center(
+                child: Wrap(spacing: 10, children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        if (speed > 1 && speed <= 2) {
+                          player.setPlaybackRate(1.0);
+                          speed = speed / 2;
+                          setState(() {
+                            textHolder = "Speed: Normal";
+                          });
+                        } else if (speed > 2 && speed <= 4) {
+                          player.setPlaybackRate(1.5);
+                          speed = speed / 2;
+                          setState(() {
+                            textHolder = "Speed: $speed" + "X";
+                          });
+                        } else if (speed == 1) {
+                          player.setPlaybackRate(0.5);
+                          speed = 1 / 2;
+                          setState(() {
+                            textHolder = "Speed: 0.5X";
+                          });
+                        } else if (speed <= 0.5) {
+                          print("Minimum Speed");
+                          setState(() {
+                            textHolder = "Speed: 0.5X";
+                          });
+                        }
+                      },
+                      child: Icon(
+                        Icons.fast_rewind,
+                        size: 38,
+                      )),
+                  ElevatedButton(
+                      onPressed: () async {
+                        if (!isplaying && !audioplayed) {
+                          int result = await player.playBytes(audiobytes);
+                          if (result == 1) {
+                            //play success
+                            setState(() {
+                              isplaying = true;
+                              audioplayed = true;
+                            });
+                          } else {
+                            print("Error while playing audio.");
+                          }
+                        } else if (audioplayed && !isplaying) {
+                          int result = await player.resume();
+                          if (result == 1) {
+                            //resume success
+                            setState(() {
+                              isplaying = true;
+                              audioplayed = true;
+                            });
+                          } else {
+                            print("Error on resume audio.");
+                          }
+                        } else {
+                          int result = await player.pause();
+                          if (result == 1) {
+                            //pause success
+                            setState(() {
+                              isplaying = false;
+                            });
+                          } else {
+                            print("Error on pause audio.");
+                          }
+                        }
+                      },
+                      child: Icon(
+                        isplaying ? Icons.pause : Icons.play_arrow,
+                        size: 38,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        if (speed < 2 && speed > 0.5) {
+                          player.setPlaybackRate(1.5);
+                          speed = speed * 2;
+                          setState(() {
+                            textHolder = "Speed: $speed" + "X";
+                          });
+                        } else if (speed < 4 && speed >= 2) {
+                          player.setPlaybackRate(2.0);
+                          speed = speed * 2;
+                          setState(() {
+                            textHolder = "Speed: $speed" + "X";
+                          });
+                        } else if (speed == 0.5) {
+                          player.setPlaybackRate(1.0);
+                          speed = speed * 2;
+                          setState(() {
+                            textHolder = "Speed: Normal";
+                          });
+                        } else if (speed >= 4) {
+                          print("Maximum Speed");
+                        }
+                      },
+                      child: Icon(
+                        Icons.fast_forward,
+                        size: 38,
+                      )),
+                ]),
               ),
             ),
             // ElevatedButton(
