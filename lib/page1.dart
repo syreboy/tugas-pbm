@@ -71,9 +71,12 @@ class _page1State extends State<page1> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(
-            "Roro Jongrang",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          title: Center(
+            child: Text(
+              "Roro Jongrang",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
           ),
           backgroundColor: Colors.white,
         ),
@@ -96,11 +99,14 @@ class _page1State extends State<page1> {
               color: Color(0xffe1e1e1),
             ),
             Container(
-              height: tinggi * 0.05,
+              height: tinggi * 0.08,
               width: lebar,
               child: Center(
                 child: Wrap(spacing: 10, children: [
                   ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                      ),
                       onPressed: () {
                         if (speed > 1 && speed <= 2) {
                           player.setPlaybackRate(1.0);
@@ -130,8 +136,12 @@ class _page1State extends State<page1> {
                       child: Icon(
                         Icons.fast_rewind,
                         size: 38,
+                        color: Colors.black,
                       )),
                   ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                      ),
                       onPressed: () async {
                         if (!isplaying && !audioplayed) {
                           int result = await player.playBytes(audiobytes);
@@ -170,9 +180,12 @@ class _page1State extends State<page1> {
                       child: Icon(
                         isplaying ? Icons.pause : Icons.play_arrow,
                         size: 38,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: Colors.black,
                       )),
                   ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                      ),
                       onPressed: () {
                         if (speed < 2 && speed > 0.5) {
                           player.setPlaybackRate(1.5);
@@ -199,33 +212,11 @@ class _page1State extends State<page1> {
                       child: Icon(
                         Icons.fast_forward,
                         size: 38,
+                        color: Colors.black,
                       )),
                 ]),
               ),
             ),
-            // ElevatedButton(
-            //     onPressed: () {},
-            //     child: Padding(
-            //       padding: const EdgeInsets.symmetric(
-            //           vertical: 15.0, horizontal: 10),
-            //       child: Text("Play", style: TextStyle(color: Colors.black)),
-            //     )),
-            // Container(
-            //     child: Text(
-            //       "Play Audio Text...",
-            //       textAlign: TextAlign.center,
-            //       style: TextStyle(
-            //           height: 3.5,
-            //           fontWeight: FontWeight.bold,
-            //           fontStyle: FontStyle.italic),
-            //     ),
-            //     height: tinggi * 0.09,
-            //     color: Colors.white),
-            // Container(
-            //   height: tinggi * 0.015,
-            //   width: lebar * 10,
-            //   color: Color(0xffe1e1e1),
-            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
