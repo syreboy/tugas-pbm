@@ -18,7 +18,7 @@ class _page1State extends State<page1> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
-            "Cerita Aku Pusing",
+            "Roro Jongrang",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           backgroundColor: Colors.white,
@@ -32,7 +32,7 @@ class _page1State extends State<page1> {
             ),
             Container(
               child: const Image(
-                  fit: BoxFit.cover, image: AssetImage("image/lulu.jpg")),
+                  fit: BoxFit.cover, image: AssetImage("image/jongrang.jpg")),
               height: tinggi * 0.35,
               width: lebar * 10,
             ),
@@ -68,7 +68,7 @@ class _page1State extends State<page1> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 child: Text(
-                  "Dalam perkembangan teknologi saat ini informasi sangat rentan terhadap serangan dan gangguan dari pihak lain. Saat pengirim dan penerima bertukar informasi melalui SMS, Email atau jenis chatting lainnya, lalu lintas informasi tersebut tidaklah terjamin keamanannya contohnya serangan man in the middle, seseorang dapat membaca, menyisipkan, ataupun mengubah data antara dua pihak yang sedang bertukar informasi atau berkomunikasi, seseorang tersebut menempatkan dirinya di tengah pembicaraan dan menyamar sebagai orang lain (M. Mustari, 2010).",
+                  "Alkisah di Jawa Tengah ada sebuah kerajaan bernama Pengging. Sang raja mempunyai seorang putra bernama Joko Bandung. Joko Bandung adalah pemuda perkasa dan mempunyai ilmu kesaktian yang tinggi, akan tetapi ia enggan menikah, ia ingin menguasai prambanan.",
                   textAlign: TextAlign.justify,
                   style: TextStyle(height: 2, fontSize: 16),
                 ),
@@ -78,7 +78,37 @@ class _page1State extends State<page1> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 child: Text(
-                  "Salah satu teknik pengamanan dalam penyampaian informasi adalah dengan melakukan enkripsi dan dekripsi terhadap informasi tersebut, yang dikenal dengan teknik kriptografi. Kritografi adalah ilmu seni untuk menjaga kerahasian dan keamanan suatu data atau informasi ketika informasi dikirim dari suatu tempat ke tempat yang lain (Ariyus, 2008). Prinsip dasar pengamanan kriptografi adalah proses enkripsi dan dekripsi.",
+                  "Prambanan dipimpin oleh raja Boko yang tubuhnya tinggi dan besar sehingga dia dianggap sebagai keturunan raksasa. Perang antara Pengging dan Prambanan pun terjadi, setelah pertarungan besar itu terjadi raja Boko pun mati di tangan Bandung Bodnowoso dan akhirnya prajurit Prambanan pun menyerahkan diri.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(height: 2, fontSize: 16),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                  "Bandung Bondowoso pun diantar ke dalam istana dan melihat seorang putri cantik bernama Roro Jongrang. Joko Bandung langsung jatuh cinta dan ingin menikahinya. Roro Jongrang pun mengatakan 'Hamba bersedia diperistri asalkan kau mampu membuat 1000 candi dan 2 buah sumur yang sangat dalam.'",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(height: 2, fontSize: 16),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                  "Badung Bondowoso pun membuat semua itu dengan dibantu para jin dan makhluk ghaib lainnya. Roro Jonggrang melihat itu dan ia pun terkejut, akhirnya memanggil dayang-dayang istana untuk membantunya membakar kayu dan tumpukan jerami juga memukul-memukul alu dan lesung.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(height: 2, fontSize: 16),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                  "Bunyi lesung dan bakaran jerami membuat ayam jantan berkokok dan para makhluk halus pun menghentikan pekerjaannya dan Bandung Bondowoso mengahampiri Roro Jonggrang dan ia berkaat 'Kalau kau tidak ingin aku nikahi bilang saja, malah kau gunakan tipu muslihat. Dasar kau ini keras seperti batu, dan Roro Jonggrang pun berubah menjadi batu.'",
                   textAlign: TextAlign.justify,
                   style: TextStyle(height: 2, fontSize: 16),
                 ),
